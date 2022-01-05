@@ -5,11 +5,13 @@
   "author": "Francisco EP <francisco.eugp@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.ts"
+    "start": "nodemon src/index.ts",
+    "dev": "yarn start"
   },
   "dependencies": {
     "apollo-server": "^3.6.1",
     "graphql": "^16.2.0",
+    "jest": "^27.4.6",
     "nodemon": "^2.0.15",
     "ts-node": "^10.4.0"
   },

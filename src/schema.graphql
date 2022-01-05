@@ -1,0 +1,49 @@
+scalar DateTime
+
+type Query{
+cars: [Car]!
+car(id:ID!): Car
+}
+
+type Mutation{
+	createCar(data: CarCreateInput!):Car!
+}
+
+interface BaseModel{
+ id: ID!
+ createdAt: DateTime!
+ updatedAt: DateTime
+ deletedAt: DateTime
+}
+
+type Attributes{
+	description: String
+	color: String
+	plateNumber: String
+}
+
+
+type Car implements BaseModel{
+	id: ID!
+	createdAt: DateTime!
+ updatedAt: DateTime
+ deletedAt: DateTime
+
+model: String!
+year: String!
+price: Float!
+make: String!
+image: String!
+sn: String!
+attributes: Attributes
+}
+
+input CarCreateInput{
+model: String!
+year: String!
+price: Float!
+make: String!
+image: String!
+sn: String!
+attributes: Attributes
+}

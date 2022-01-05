@@ -1,16 +1,10 @@
 /* eslint-disable no-console */
 import { ApolloServer } from 'apollo-server';
+import path from 'path';
+import { readFileSync } from 'fs';
+import resolvers from './resolvers';
 
-const typeDefs = `
-type Query{
-	info: String!
-}
-`;
-const resolvers = {
-  Query: {
-    info: () => `Mock API `,
-  },
-};
+const typeDefs = readFileSync(path.join(__dirname, 'schema.graphql'), 'utf8');
 
 const server = new ApolloServer({ typeDefs, resolvers });
 

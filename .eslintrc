@@ -1,6 +1,6 @@
 {
 	"extends": [
-	  "wesbos"
+	  "wesbos/typescript"
 	],
 	"rules": {
 	  "no-console": "off",
